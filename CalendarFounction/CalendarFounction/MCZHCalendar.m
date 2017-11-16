@@ -66,11 +66,11 @@ static NSDateFormatter *dateFormattor;
     self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width-viewEdge*2, titleView_height)];
     self.titleView.backgroundColor = [UIColor colorWithRed:96/255 green:139/255.0 blue:252/255.0 alpha:1];
     [self.ChamferView addSubview:self.titleView];
-    self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, (self.frame.size.width-viewEdge*2)/4, 44)];
+    self.leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 29, (self.frame.size.width-viewEdge*2)/5, 26)];
     [self.leftButton setImage:[UIImage imageNamed:@"calendar_left"] forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(setPreviousMonthDate) forControlEvents:UIControlEventTouchUpInside];
     [self.titleView addSubview:self.leftButton];
-    self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake((self.frame.size.width-viewEdge*2)*3/4, 20, (self.frame.size.width-viewEdge*2)/4, 44)];
+    self.rightButton = [[UIButton alloc] initWithFrame:CGRectMake((self.frame.size.width-viewEdge*2)*3/4, 29, (self.frame.size.width-viewEdge*2)/5, 26)];
     [self.rightButton setImage:[UIImage imageNamed:@"calendar_right"] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(setNextMonthDate) forControlEvents:UIControlEventTouchUpInside];
     [self.titleView addSubview:self.rightButton];
@@ -149,7 +149,7 @@ static NSDateFormatter *dateFormattor;
 - (NSString *)stringFromDate:(NSDate *)date {
     if (!dateFormattor) {
         dateFormattor = [[NSDateFormatter alloc] init];
-        [dateFormattor setDateFormat:@"yyyy-MM"];
+        [dateFormattor setDateFormat:@"yyyy年MM月"];
     }
     return [dateFormattor stringFromDate:date];
 }
